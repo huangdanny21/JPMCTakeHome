@@ -7,18 +7,24 @@
 
 import Foundation
 
-enum WeatherError: Error {
-    case invalidURL
-    case noData
-    case invalidData
+protocol WeatherProtocol {
+    func getWeatherData(for city: String, completion: @escaping (Result<WeatherInfo, Error>) -> Void)
 }
 
-class WeatherService {
+class WeatherService: WeatherProtocol {
     private let apiKey = ""
     var currentWeather: WeatherInfo?
     
     // MARK: - Public
     
+    /**
+     Fetches weather data for the specified city.
+     
+     - Parameters:
+        - city: The name of the city for which to fetch weather data.
+        - completion: A closure to be called when the weather data retrieval is completed. It contains a `Result` object that either holds a `WeatherInfo` object on success or an `Error` on failure.
+
+     */
     func getWeatherData(for city: String, completion: @escaping (Result<WeatherInfo, Error>) -> Void) {
         guard let url = createURL(for: city) else {
             completion(.failure(WeatherError.invalidURL))
@@ -81,4 +87,10 @@ class WeatherService {
         let urlString = "http://openweathermap.org/img/w/\(iconCode).png"
         return URL(string: urlString)!
     }
+}
+
+enum WeatherError: Error {
+    case invalidURL
+    case noData
+    case invalidData
 }

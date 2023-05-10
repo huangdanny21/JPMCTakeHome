@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B5833C942A0C4D3400C6A4FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833C932A0C4D3400C6A4FC /* AppDelegate.swift */; };
 		B5833C962A0C4D3400C6A4FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833C952A0C4D3400C6A4FC /* SceneDelegate.swift */; };
-		B5833C982A0C4D3400C6A4FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833C972A0C4D3400C6A4FC /* ViewController.swift */; };
+		B5833C982A0C4D3400C6A4FC /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833C972A0C4D3400C6A4FC /* WeatherViewController.swift */; };
 		B5833C9B2A0C4D3400C6A4FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5833C992A0C4D3400C6A4FC /* Main.storyboard */; };
 		B5833C9D2A0C4D3500C6A4FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5833C9C2A0C4D3500C6A4FC /* Assets.xcassets */; };
 		B5833CA02A0C4D3500C6A4FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5833C9E2A0C4D3500C6A4FC /* LaunchScreen.storyboard */; };
@@ -19,6 +19,8 @@
 		B5833CC72A0C4F3F00C6A4FC /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CC62A0C4F3F00C6A4FC /* WeatherInfo.swift */; };
 		B5833CCB2A0C509A00C6A4FC /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CCA2A0C509A00C6A4FC /* WeatherView.swift */; };
 		B5833CCE2A0C51C100C6A4FC /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CCD2A0C51C100C6A4FC /* WeatherService.swift */; };
+		B5833CD22A0C54B800C6A4FC /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CD12A0C54B800C6A4FC /* WeatherViewModel.swift */; };
+		B5833CD52A0C596700C6A4FC /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B5833CD42A0C596700C6A4FC /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +44,7 @@
 		B5833C902A0C4D3400C6A4FC /* JPMCTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPMCTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5833C932A0C4D3400C6A4FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5833C952A0C4D3400C6A4FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B5833C972A0C4D3400C6A4FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B5833C972A0C4D3400C6A4FC /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		B5833C9A2A0C4D3400C6A4FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5833C9C2A0C4D3500C6A4FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5833C9F2A0C4D3500C6A4FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 		B5833CC62A0C4F3F00C6A4FC /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
 		B5833CCA2A0C509A00C6A4FC /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		B5833CCD2A0C51C100C6A4FC /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		B5833CD12A0C54B800C6A4FC /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5833CD52A0C596700C6A4FC /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +114,6 @@
 				B5833CC32A0C4EBD00C6A4FC /* Models */,
 				B5833C932A0C4D3400C6A4FC /* AppDelegate.swift */,
 				B5833C952A0C4D3400C6A4FC /* SceneDelegate.swift */,
-				B5833C972A0C4D3400C6A4FC /* ViewController.swift */,
 				B5833C992A0C4D3400C6A4FC /* Main.storyboard */,
 				B5833C9C2A0C4D3500C6A4FC /* Assets.xcassets */,
 				B5833C9E2A0C4D3500C6A4FC /* LaunchScreen.storyboard */,
@@ -156,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				B5833CC92A0C4FE100C6A4FC /* Views */,
+				B5833CD12A0C54B800C6A4FC /* WeatherViewModel.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -163,6 +167,7 @@
 		B5833CC92A0C4FE100C6A4FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B5833C972A0C4D3400C6A4FC /* WeatherViewController.swift */,
 				B5833CCA2A0C509A00C6A4FC /* WeatherView.swift */,
 			);
 			path = Views;
@@ -192,6 +197,9 @@
 			dependencies = (
 			);
 			name = JPMCTakeHome;
+			packageProductDependencies = (
+				B5833CD42A0C596700C6A4FC /* SDWebImageSwiftUI */,
+			);
 			productName = JPMCTakeHome;
 			productReference = B5833C902A0C4D3400C6A4FC /* JPMCTakeHome.app */;
 			productType = "com.apple.product-type.application";
@@ -264,6 +272,9 @@
 				Base,
 			);
 			mainGroup = B5833C872A0C4D3400C6A4FC;
+			packageReferences = (
+				B5833CD32A0C596700C6A4FC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = B5833C912A0C4D3400C6A4FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -309,7 +320,8 @@
 			files = (
 				B5833CCB2A0C509A00C6A4FC /* WeatherView.swift in Sources */,
 				B5833CC72A0C4F3F00C6A4FC /* WeatherInfo.swift in Sources */,
-				B5833C982A0C4D3400C6A4FC /* ViewController.swift in Sources */,
+				B5833C982A0C4D3400C6A4FC /* WeatherViewController.swift in Sources */,
+				B5833CD22A0C54B800C6A4FC /* WeatherViewModel.swift in Sources */,
 				B5833C942A0C4D3400C6A4FC /* AppDelegate.swift in Sources */,
 				B5833CCE2A0C51C100C6A4FC /* WeatherService.swift in Sources */,
 				B5833C962A0C4D3400C6A4FC /* SceneDelegate.swift in Sources */,
@@ -648,6 +660,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B5833CD32A0C596700C6A4FC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B5833CD42A0C596700C6A4FC /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5833CD32A0C596700C6A4FC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B5833C882A0C4D3400C6A4FC /* Project object */;
 }
