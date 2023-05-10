@@ -9,20 +9,6 @@ import UIKit
 import SDWebImage
 
 class WeatherView: UIView {
-    lazy var cityTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Enter a city"
-        textField.borderStyle = .roundedRect
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
-    }()
-    
-    lazy var searchButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Search", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
     
     lazy var temperatureLabel: UILabel = {
         let label = UILabel()
@@ -52,7 +38,44 @@ class WeatherView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+    
+    init() {
+        super.init(frame: .zero)
+        backgroundColor = .white
+        addSubviews()
+        setupConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func addSubviews() {
+        addSubview(temperatureLabel)
+        addSubview(humidityLabel)
+        addSubview(descriptionLabel)
+        addSubview(weatherIconImageView)
+    }
+    
+    private func setupConstraints() {
+        let stackView = UIStackView(arrangedSubviews: [temperatureLabel, humidityLabel, descriptionLabel, weatherIconImageView])
+        stackView.axis = .vertical
+        stackView.spacing = 20
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(stackView)
+        
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+        ])
+        
+        weatherIconImageView.heightAnchor.constraint(equalTo: weatherIconImageView.widthAnchor).isActive = true
+    }
 }
+
 
 extension WeatherView {
     func configure(with weatherInfo: WeatherInfo?) {

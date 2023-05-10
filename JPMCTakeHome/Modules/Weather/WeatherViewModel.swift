@@ -9,8 +9,10 @@ import UIKit
 
 class WeatherViewModel {
     private let service: WeatherProtocol
+    var lastSearchedWeatherInfo: WeatherInfo?
+
     var weatherInfo: WeatherInfo?
-    var onWeatherInfoUpdate: (() -> Void)?
+    var onWeatherInfoUpdate: ((WeatherInfo?) -> Void)?
     var onError: ((Error) -> Void)?
     
     // MARK: - Constructor
@@ -30,10 +32,11 @@ class WeatherViewModel {
             switch result {
             case .success(let weatherInfo):
                 self?.weatherInfo = weatherInfo
-                self?.onWeatherInfoUpdate?()
                 
-                // Store the last searched city
-                self?.saveLastSearchedCity(city)
+                // Cache the last searched weather info
+                self?.lastSearchedWeatherInfo = weatherInfo
+                
+                self?.onWeatherInfoUpdate?(weatherInfo)
                 
             case .failure(let error):
                 self?.onError?(error)
