@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class WeatherView: UIView {
     lazy var cityTextField: UITextField = {
@@ -51,4 +52,23 @@ class WeatherView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+}
+
+extension WeatherView {
+    func configure(with weatherInfo: WeatherInfo?) {
+        temperatureLabel.text = "\(String(describing: weatherInfo?.temp))°C"
+        humidityLabel.text = "\(String(describing: weatherInfo?.humidity ?? 0))%"
+        descriptionLabel.text = weatherInfo?.weatherDescription
+        loadIcon(from: weatherInfo?.icon ?? "")
+    }
+
+    private func loadIcon(from urlString: String) {
+        guard let url = URL(string: urlString) else {
+            // Handle invalid URL
+            return
+        }
+        weatherIconImageView.sd_setImage(with: url, completed: nil)
+    }
+
+
 }
