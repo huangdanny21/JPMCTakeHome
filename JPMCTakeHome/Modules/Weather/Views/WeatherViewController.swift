@@ -41,6 +41,10 @@ class WeatherViewController: UIViewController {
         setupSearchController()
         setupWeatherView()
         setupBindings()
+        
+        if let lastSearchedCity = getLastSearchedCity() {
+            viewModel.searchWeather(for: lastSearchedCity)
+        }
     }
     
     // MARK: - Private
@@ -76,12 +80,19 @@ class WeatherViewController: UIViewController {
             }
         }
     }
+    
+    private func getLastSearchedCity() -> String? {
+        UserDefaults.standard.string(forKey: "LastSearchedCity")
+    }
 }
 
 extension WeatherViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let city = searchBar.text else { return }
-        viewModel.getWeatherData(for: city)
+        guard let city = weatherView.cityTextField.text, !city.isEmpty else {
+            showAlert(with: "Error", message: "Please enter a city.")
+            return
+        }
+        viewModel.searchWeather(for: city)
     }
 }
 
