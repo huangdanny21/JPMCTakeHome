@@ -23,19 +23,16 @@ class WeatherViewController: UIViewController {
         return view
     }()
     private let viewModel: WeatherViewModel
-    private let weatherService: WeatherService // Add weatherService property
     
     // MARK: - Constructor
     
-    init(viewModel: WeatherViewModel, weatherService: WeatherService) {
+    init(viewModel: WeatherViewModel) {
         self.viewModel = viewModel
-        self.weatherService = weatherService
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         self.viewModel = WeatherViewModel()
-        self.weatherService = WeatherService()
         super.init(coder: coder)
     }
     
@@ -113,15 +110,7 @@ class WeatherViewController: UIViewController {
         let longitude = userLocation.coordinate.longitude
 
         // Make API call with latitude and longitude to get weather data
-        weatherService.getCurrentLocationWeather(latitude: latitude, longitude: longitude) { [weak self] result in
-            switch result {
-            case .success(let weatherInfo):
-                // Store the searched city in UserDefaults
-                self?.viewModel.onWeatherInfoUpdate?(weatherInfo)
-            case .failure(let error):
-                self?.viewModel.onError?(error)
-            }
-        }
+        viewModel.getCurrentLocationData(latitiude: latitude, longtitude: longitude)
     }
 }
 

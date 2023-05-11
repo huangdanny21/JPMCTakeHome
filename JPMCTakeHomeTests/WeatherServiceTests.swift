@@ -9,6 +9,25 @@ import XCTest
 import CoreLocation
 
 class MockWeatherService: WeatherProtocol {
+    var shouldSucceed: Bool = true
+    var mockWeatherData: WeatherData? // Add the mockWeatherData property
+    
+    func searchWeather(for city: String, completion: @escaping (Result<WeatherData, Error>) -> Void) {
+        if shouldSucceed {
+            if let mockWeatherData = mockWeatherData { // Return the mockWeatherData if it is set
+                completion(.success(mockWeatherData))
+            } else {
+                // Create a failure response with a custom error
+                let error = NSError(domain: "MockWeatherService", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to get weather data"])
+                completion(.failure(error))
+            }
+        } else {
+            // Create a failure response with a custom error
+            let error = NSError(domain: "MockWeatherService", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to get weather data"])
+            completion(.failure(error))
+        }
+    }
+    
     func getCurrentLocationWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping (Result<WeatherData, Error>) -> Void) {
         if shouldSucceed {
             // Create a mock WeatherData object with dummy values
@@ -35,9 +54,8 @@ class MockWeatherService: WeatherProtocol {
             completion(.failure(error))
         }
     }
-    
-    var shouldSucceed: Bool = true
-    
+
+
     func getWeatherData(for city: String, completion: @escaping (Result<WeatherData, Error>) -> Void) {
         if shouldSucceed {
             let mockWeatherData = WeatherData(
@@ -120,5 +138,4 @@ final class WeatherServiceTests: XCTestCase {
         // Wait for the expectation to be fulfilled
         wait(for: [expectation], timeout: 5.0)
     }
-
 }

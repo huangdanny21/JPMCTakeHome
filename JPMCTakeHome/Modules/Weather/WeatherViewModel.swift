@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class WeatherViewModel {
     private let service: WeatherProtocol
@@ -25,6 +26,18 @@ class WeatherViewModel {
     
     func searchWeather(for city: String) {
         getWeatherData(for: city)
+    }
+    
+    func getCurrentLocationData(latitiude: CLLocationDegrees, longtitude: CLLocationDegrees) {
+        service.getCurrentLocationWeather(latitude: latitiude, longitude: longtitude) {  [weak self] result in
+            switch result {
+            case .success(let weatherInfo):
+                // Store the searched city in UserDefaults
+                self?.onWeatherInfoUpdate?(weatherInfo)
+            case .failure(let error):
+                self?.onError?(error)
+            }
+        }
     }
     
     func getWeatherData(for city: String) {

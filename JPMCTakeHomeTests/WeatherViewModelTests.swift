@@ -77,4 +77,28 @@ class WeatherViewModelTests: XCTestCase {
         }
     }
 
+    func testGetCurrentLocationData_Success() {
+        // Create the mock weather data
+        let mockWeatherData = WeatherData(coord: Coord(lon: 0, lat: 0), weather: [], base: "", main: Main(temp: 0, feels_like: 0, temp_min: 0, temp_max: 0, pressure: 0, humidity: 0), visibility: 0, wind: Wind(speed: 0, deg: 0), clouds: Clouds(all: 0), dt: 0, sys: Sys(type: 0, id: 0, country: "", sunrise: 0, sunset: 0), timezone: 0, id: 0, name: "Mock City", cod: 0)
+
+        // Set the mock service to return the mock weather data
+        mockService.mockWeatherData = mockWeatherData
+
+        // Create an expectation for the onWeatherInfoUpdate closure to be called
+        let updateExpectation = expectation(description: "onWeatherInfoUpdate should be called")
+        updateExpectation.expectedFulfillmentCount = 1 // Set the expected fulfillment count to 1
+
+        // Set up the closure to be called
+        viewModel.onWeatherInfoUpdate = { weatherData in
+            XCTAssertEqual(weatherData!.name, mockWeatherData.name)
+            updateExpectation.fulfill()
+        }
+
+        // Perform the search
+        viewModel.getCurrentLocationData(latitiude: 37.7749, longtitude: -122.4194)
+
+        // Wait for the expectation to be fulfilled
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+
 }
