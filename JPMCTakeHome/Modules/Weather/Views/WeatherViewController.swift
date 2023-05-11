@@ -123,7 +123,6 @@ class WeatherViewController: UIViewController {
             }
         }
     }
-
 }
 
 extension WeatherViewController: UISearchBarDelegate {

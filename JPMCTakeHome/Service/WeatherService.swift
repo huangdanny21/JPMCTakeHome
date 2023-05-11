@@ -118,7 +118,7 @@ class WeatherService: WeatherProtocol {
     }
     
     private func createWeatherIconURL(iconCode: String) -> String {
-        return "http://openweathermap.org/img/w/\(iconCode).png"
+        "http://openweathermap.org/img/w/\(iconCode).png"
     }
 }
 

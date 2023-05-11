@@ -107,7 +107,7 @@ class WeatherView: UIView {
             temperatureLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
             temperatureLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             
-            // coordinatesLabel constraints
+            // dateLabel constraints
             dateLabel.topAnchor.constraint(equalTo: temperatureLabel.bottomAnchor, constant: 8),
             dateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             
@@ -141,7 +141,6 @@ class WeatherView: UIView {
     }
 }
 
-
 extension WeatherView {
     func configure(with weather: WeatherData) {
         nameLabel.text = weather.name
@@ -163,14 +162,6 @@ extension WeatherView {
         } else {
             iconImageView.image = nil
         }
-    }
-
-    private func loadIcon(from urlString: String) {
-        guard let url = URL(string: urlString) else {
-            // Handle invalid URL
-            return
-        }
-        iconImageView.sd_setImage(with: url, completed: nil)
     }
     
     private func formattedDate(from timestamp: TimeInterval) -> String {
