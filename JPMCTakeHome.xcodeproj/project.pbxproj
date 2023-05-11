@@ -27,6 +27,8 @@
 		B59458B82A0C77DC0034E370 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B59458B72A0C77DC0034E370 /* SDWebImageSwiftUI */; };
 		B59458B92A0C78000034E370 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CC62A0C4F3F00C6A4FC /* WeatherInfo.swift */; };
 		B59458BB2A0C796A0034E370 /* WeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59458BA2A0C796A0034E370 /* WeatherViewModelTests.swift */; };
+		B59458BC2A0C84E80034E370 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833C972A0C4D3400C6A4FC /* WeatherViewController.swift */; };
+		B59458BD2A0C84F40034E370 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CCA2A0C509A00C6A4FC /* WeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -358,8 +360,10 @@
 				B5833CDA2A0C774000C6A4FC /* WeatherViewModel.swift in Sources */,
 				B5833CD92A0C76EE00C6A4FC /* WeatherService.swift in Sources */,
 				B59458B92A0C78000034E370 /* WeatherInfo.swift in Sources */,
+				B59458BC2A0C84E80034E370 /* WeatherViewController.swift in Sources */,
 				B5833CAB2A0C4D3500C6A4FC /* JPMCTakeHomeTests.swift in Sources */,
 				B59458BB2A0C796A0034E370 /* WeatherViewModelTests.swift in Sources */,
+				B59458BD2A0C84F40034E370 /* WeatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

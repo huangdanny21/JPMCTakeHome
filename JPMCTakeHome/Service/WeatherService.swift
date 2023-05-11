@@ -34,7 +34,6 @@ class WeatherService: WeatherProtocol {
         
         print("Request URL:", url.absoluteString)
 
-        
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 completion(.failure(error))
@@ -53,7 +52,10 @@ class WeatherService: WeatherProtocol {
             do {
                 let decoder = JSONDecoder()
                 let weatherData = try decoder.decode(WeatherData.self, from: data)
+                UserDefaults.standard.set(city, forKey: WeatherViewController.lastSearchedCityKey)
+
                 completion(.success(weatherData))
+                
             } catch {
                 completion(.failure(WeatherError.invalidData))
             }

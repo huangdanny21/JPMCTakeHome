@@ -10,7 +10,7 @@ import CoreLocation
 
 class WeatherViewController: UIViewController {
     private let locationManager = CLLocationManager()
-    private let lastSearchedCityKey = "LastSearchedCity"
+    static let lastSearchedCityKey = "LastSearchedCity"
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
@@ -43,18 +43,21 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
         setupSearchController()
         setupWeatherView()
         setupBindings()
         
         // Load the last searched city from UserDefaults
-        let lastSearchedCity = UserDefaults.standard.string(forKey: lastSearchedCityKey)
+        let lastSearchedCity = UserDefaults.standard.string(forKey: WeatherViewController.lastSearchedCityKey)
         
         // If a last searched city exists, call the searchWeather method
         if let city = lastSearchedCity {
             viewModel.searchWeather(for: city)
+        } else {
+            // We dont have a last searched city
+            // so we display the user's current location if it's authorized!
+            locationManager.delegate = self
+            locationManager.requestWhenInUseAuthorization()
         }
     }
     
@@ -113,34 +116,31 @@ class WeatherViewController: UIViewController {
         weatherService.getCurrentLocationWeather(latitude: latitude, longitude: longitude) { [weak self] result in
             switch result {
             case .success(let weatherInfo):
+                // Store the searched city in UserDefaults
                 self?.viewModel.onWeatherInfoUpdate?(weatherInfo)
             case .failure(let error):
                 self?.viewModel.onError?(error)
             }
         }
     }
-    
-    private func getLastSearchedCity() -> String? {
-        UserDefaults.standard.string(forKey: "LastSearchedCity")
-    }
+
 }
 
 extension WeatherViewController: UISearchBarDelegate {
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let city = searchBar.text, !city.isEmpty else {
             showAlert(with: "Error", message: "Please enter a city.")
             return
         }
-        
-        // Store the searched city in UserDefaults
-        UserDefaults.standard.set(city, forKey: lastSearchedCityKey)
-        
+                
         viewModel.searchWeather(for: city)
         
         // Dismiss the search bar
         searchController.dismiss(animated: true, completion: nil)
     }
 }
+
 
 extension WeatherViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

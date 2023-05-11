@@ -56,8 +56,4 @@ class WeatherViewModel {
     }
     
     // MARK: - Private
-    
-    private func saveLastSearchedCity(_ city: String) {
-        UserDefaults.standard.set(city, forKey: "LastSearchedCity")
-    }
 }
