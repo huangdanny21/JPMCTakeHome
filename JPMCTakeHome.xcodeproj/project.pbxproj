@@ -21,6 +21,11 @@
 		B5833CCE2A0C51C100C6A4FC /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CCD2A0C51C100C6A4FC /* WeatherService.swift */; };
 		B5833CD22A0C54B800C6A4FC /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CD12A0C54B800C6A4FC /* WeatherViewModel.swift */; };
 		B5833CD52A0C596700C6A4FC /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B5833CD42A0C596700C6A4FC /* SDWebImageSwiftUI */; };
+		B5833CD82A0C769900C6A4FC /* WeatherServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CD72A0C769900C6A4FC /* WeatherServiceTests.swift */; };
+		B5833CD92A0C76EE00C6A4FC /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CCD2A0C51C100C6A4FC /* WeatherService.swift */; };
+		B5833CDA2A0C774000C6A4FC /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CD12A0C54B800C6A4FC /* WeatherViewModel.swift */; };
+		B59458B82A0C77DC0034E370 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B59458B72A0C77DC0034E370 /* SDWebImageSwiftUI */; };
+		B59458B92A0C78000034E370 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CC62A0C4F3F00C6A4FC /* WeatherInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,7 @@
 		B5833CCA2A0C509A00C6A4FC /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		B5833CCD2A0C51C100C6A4FC /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		B5833CD12A0C54B800C6A4FC /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		B5833CD72A0C769900C6A4FC /* WeatherServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B59458B82A0C77DC0034E370 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +100,7 @@
 				B5833CA92A0C4D3500C6A4FC /* JPMCTakeHomeTests */,
 				B5833CB32A0C4D3500C6A4FC /* JPMCTakeHomeUITests */,
 				B5833C912A0C4D3400C6A4FC /* Products */,
+				B59458B62A0C77DC0034E370 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				B5833CAA2A0C4D3500C6A4FC /* JPMCTakeHomeTests.swift */,
+				B5833CD72A0C769900C6A4FC /* WeatherServiceTests.swift */,
 			);
 			path = JPMCTakeHomeTests;
 			sourceTree = "<group>";
@@ -181,6 +190,13 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		B59458B62A0C77DC0034E370 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -218,6 +234,9 @@
 				B5833CA82A0C4D3500C6A4FC /* PBXTargetDependency */,
 			);
 			name = JPMCTakeHomeTests;
+			packageProductDependencies = (
+				B59458B72A0C77DC0034E370 /* SDWebImageSwiftUI */,
+			);
 			productName = JPMCTakeHomeTests;
 			productReference = B5833CA62A0C4D3500C6A4FC /* JPMCTakeHomeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -332,6 +351,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5833CD82A0C769900C6A4FC /* WeatherServiceTests.swift in Sources */,
+				B5833CDA2A0C774000C6A4FC /* WeatherViewModel.swift in Sources */,
+				B5833CD92A0C76EE00C6A4FC /* WeatherService.swift in Sources */,
+				B59458B92A0C78000034E370 /* WeatherInfo.swift in Sources */,
 				B5833CAB2A0C4D3500C6A4FC /* JPMCTakeHomeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,6 +697,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		B5833CD42A0C596700C6A4FC /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5833CD32A0C596700C6A4FC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		B59458B72A0C77DC0034E370 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B5833CD32A0C596700C6A4FC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
