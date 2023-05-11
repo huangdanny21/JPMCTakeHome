@@ -24,7 +24,7 @@ class WeatherService: WeatherProtocol {
      
      - Parameters:
         - city: The name of the city for which to fetch weather data.
-        - completion: A closure to be called when the weather data retrieval is completed. It contains a `Result` object that either holds a `WeatherInfo` object on success or an `Error` on failure.
+        - completion: A closure to be called when the weather data retrieval is completed. It contains a `Result` object that either holds a `WeatherData` object on success or an `Error` on failure.
      */
     func getWeatherData(for city: String, completion: @escaping (Result<WeatherData, Error>) -> Void) {
         guard let url = createURL(for: city) else {
@@ -70,7 +70,7 @@ class WeatherService: WeatherProtocol {
      - Parameters:
         - latitude: The latitude coordinate of the location.
         - longitude: The longitude coordinate of the location.
-        - completion: A closure to be called when the weather data retrieval is completed. It contains a `Result` object that either holds a `WeatherInfo` object on success or an `Error` on failure.
+        - completion: A closure to be called when the weather data retrieval is completed. It contains a `Result` object that either holds a `WeatherData` object on success or an `Error` on failure.
      */
     func getCurrentLocationWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping (Result<WeatherData, Error>) -> Void) {
         guard let url = createURL(for: String(latitude), String(longitude)) else {
