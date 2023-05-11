@@ -92,7 +92,7 @@ final class WeatherServiceTests: XCTestCase {
     func testGetCurrentLocationWeather() {
         // Create a mock location
         let latitude: CLLocationDegrees = 37.7749
-        let location = CLLocation(latitude: latitude, longitude: longitude)
+        let longitude: CLLocationDegrees = -122.4194
 
         // Create an instance of the WeatherService
         let weatherService = MockWeatherService()

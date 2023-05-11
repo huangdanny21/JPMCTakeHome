@@ -23,19 +23,19 @@ struct WeatherData: Codable {
     let cod: Int
 }
 
-struct Coord: Codable {
+struct Coord: Codable, Equatable {
     let lon: Double
     let lat: Double
 }
 
-struct Weather: Codable {
+struct Weather: Codable, Equatable {
     let id: Int
     let main: String
     let description: String
     let icon: String
 }
 
-struct Main: Codable {
+struct Main: Codable, Equatable {
     let temp: Double
     let feels_like: Double
     let temp_min: Double
@@ -44,19 +44,38 @@ struct Main: Codable {
     let humidity: Int
 }
 
-struct Wind: Codable {
+struct Wind: Codable, Equatable {
     let speed: Double
     let deg: Int
 }
 
-struct Clouds: Codable {
+struct Clouds: Codable, Equatable {
     let all: Int
 }
 
-struct Sys: Codable {
+struct Sys: Codable, Equatable {
     let type: Int
     let id: Int
     let country: String
     let sunrise: TimeInterval
     let sunset: TimeInterval
+}
+
+extension WeatherData: Equatable {
+    static func == (lhs: WeatherData, rhs: WeatherData) -> Bool {
+        // Compare all the properties for equality
+        return lhs.coord == rhs.coord &&
+            lhs.weather == rhs.weather &&
+            lhs.base == rhs.base &&
+            lhs.main == rhs.main &&
+            lhs.visibility == rhs.visibility &&
+            lhs.wind == rhs.wind &&
+            lhs.clouds == rhs.clouds &&
+            lhs.dt == rhs.dt &&
+            lhs.sys == rhs.sys &&
+            lhs.timezone == rhs.timezone &&
+            lhs.id == rhs.id &&
+            lhs.name == rhs.name &&
+            lhs.cod == rhs.cod
+    }
 }
