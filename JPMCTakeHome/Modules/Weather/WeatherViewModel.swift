@@ -15,18 +15,6 @@ class WeatherViewModel {
     var onWeatherInfoUpdate: ((WeatherData?) -> Void)?
     var onError: ((Error) -> Void)?
     
-    var formattedDate: String? {
-        guard let timestamp = weatherInfo?.dt else {
-            return nil
-        }
-
-        let date = Date(timeIntervalSince1970: timestamp)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd, yyyy hh:mm a"
-
-        return dateFormatter.string(from: date)
-    }
-    
     // MARK: - Constructor
     
     init(service: WeatherProtocol = WeatherService()) {
@@ -54,6 +42,4 @@ class WeatherViewModel {
             }
         }
     }
-    
-    // MARK: - Private
 }
