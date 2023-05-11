@@ -9,11 +9,23 @@ import UIKit
 
 class WeatherViewModel {
     private let service: WeatherProtocol
-    var lastSearchedWeatherInfo: WeatherInfo?
+    var lastSearchedWeatherInfo: WeatherData?
 
-    var weatherInfo: WeatherInfo?
-    var onWeatherInfoUpdate: ((WeatherInfo?) -> Void)?
+    var weatherInfo: WeatherData?
+    var onWeatherInfoUpdate: ((WeatherData?) -> Void)?
     var onError: ((Error) -> Void)?
+    
+    var formattedDate: String? {
+        guard let timestamp = weatherInfo?.dt else {
+            return nil
+        }
+
+        let date = Date(timeIntervalSince1970: timestamp)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy hh:mm a"
+
+        return dateFormatter.string(from: date)
+    }
     
     // MARK: - Constructor
     
@@ -35,7 +47,6 @@ class WeatherViewModel {
                 
                 // Cache the last searched weather info
                 self?.lastSearchedWeatherInfo = weatherInfo
-                
                 self?.onWeatherInfoUpdate?(weatherInfo)
                 
             case .failure(let error):

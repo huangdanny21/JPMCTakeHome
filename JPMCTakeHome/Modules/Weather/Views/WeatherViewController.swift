@@ -6,35 +6,36 @@
 //
 
 import UIKit
+import CoreLocation
 
 class WeatherViewController: UIViewController {
-    
+    private let locationManager = CLLocationManager()
     private let lastSearchedCityKey = "LastSearchedCity"
-    
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         return searchController
     }()
-    
     private lazy var weatherView: WeatherView = {
         let view = WeatherView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
     private let viewModel: WeatherViewModel
+    private let weatherService: WeatherService // Add weatherService property
     
     // MARK: - Constructor
     
-    init(viewModel: WeatherViewModel) {
+    init(viewModel: WeatherViewModel, weatherService: WeatherService) {
         self.viewModel = viewModel
+        self.weatherService = weatherService
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         self.viewModel = WeatherViewModel()
+        self.weatherService = WeatherService()
         super.init(coder: coder)
     }
     
@@ -42,6 +43,8 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
         setupSearchController()
         setupWeatherView()
         setupBindings()
@@ -80,14 +83,39 @@ class WeatherViewController: UIViewController {
                     self?.weatherView.configure(with: weatherInfo)
                 } else {
                     // If weatherInfo is nil, display the last searched weather info
-                    self?.weatherView.configure(with: self?.viewModel.lastSearchedWeatherInfo)
+                    if let lastSearched = self?.viewModel.lastSearchedWeatherInfo {
+                        self?.weatherView.configure(with: lastSearched)
+                    } else {
+                        // Blank screen
+                    }
                 }
             }
         }
         
         viewModel.onError = { [weak self] error in
             DispatchQueue.main.async {
-                self?.showAlert(with: "Error", message: error.localizedDescription)
+                self?.showAlert(with: "Not Found", message: "Location not found")
+            }
+        }
+    }
+    
+    private func getCurrentLocationWeather() {
+        guard let userLocation = locationManager.location else {
+            // Unable to retrieve user's location
+            return
+        }
+
+        // Retrieve weather data using user's location coordinates
+        let latitude = userLocation.coordinate.latitude
+        let longitude = userLocation.coordinate.longitude
+
+        // Make API call with latitude and longitude to get weather data
+        weatherService.getCurrentLocationWeather(latitude: latitude, longitude: longitude) { [weak self] result in
+            switch result {
+            case .success(let weatherInfo):
+                self?.viewModel.onWeatherInfoUpdate?(weatherInfo)
+            case .failure(let error):
+                self?.viewModel.onError?(error)
             }
         }
     }
@@ -103,9 +131,23 @@ extension WeatherViewController: UISearchBarDelegate {
             showAlert(with: "Error", message: "Please enter a city.")
             return
         }
+        
         // Store the searched city in UserDefaults
         UserDefaults.standard.set(city, forKey: lastSearchedCityKey)
+        
         viewModel.searchWeather(for: city)
+        
+        // Dismiss the search bar
+        searchController.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension WeatherViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            // User granted location access permission, retrieve weather data
+            getCurrentLocationWeather()
+        }
     }
 }
 
