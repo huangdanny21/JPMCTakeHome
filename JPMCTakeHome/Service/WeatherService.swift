@@ -53,14 +53,7 @@ class WeatherService: WeatherProtocol {
             do {
                 let decoder = JSONDecoder()
                 let weatherData = try decoder.decode(WeatherData.self, from: data)
-//                let weather = self.parseWeatherData(weatherData)
                 completion(.success(weatherData))
-
-//                if let weather = weather {
-//                    completion(.success(weather))
-//                } else {
-//                    completion(.failure(WeatherError.invalidData))
-//                }
             } catch {
                 completion(.failure(WeatherError.invalidData))
             }
@@ -86,12 +79,28 @@ class WeatherService: WeatherProtocol {
         print("Request URL:", url.absoluteString)
 
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            // Handle the response and parse weather data
-            // ...
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(WeatherError.invalidResponse))
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let weatherData = try decoder.decode(WeatherData.self, from: data)
+                completion(.success(weatherData))
+            } catch {
+                completion(.failure(error))
+            }
         }
         
         task.resume()
     }
+
     
     // MARK: - Private
     
@@ -106,19 +115,6 @@ class WeatherService: WeatherProtocol {
         return URL(string: urlString)
     }
     
-//    private func parseWeatherData(_ data: WeatherData) -> Weather? {
-//        guard let temperature = data.main.temp, let humidity = data.main.humidity, let weather = data.weather.first else {
-//            return nil
-//        }
-//
-//        let weatherDescription = weather.weatherDescription
-//        let iconCode = weather.icon ?? ""
-//
-//        let weatherIconURL = createWeatherIconURL(iconCode: iconCode)
-//
-//        return Weather(temp: temperature, humidity: humidity, weatherDescription: weatherDescription, icon: weatherIconURL)
-//    }
-    
     private func createWeatherIconURL(iconCode: String) -> String {
         return "http://openweathermap.org/img/w/\(iconCode).png"
     }
@@ -128,4 +124,5 @@ enum WeatherError: Error {
     case invalidURL
     case noData
     case invalidData
+    case invalidResponse
 }
