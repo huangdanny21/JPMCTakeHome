@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6724CDF0AEB06079801A0000 /* Pods_JPMCTakeHomeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9AB1DA9E5EC5F0847483B71 /* Pods_JPMCTakeHomeTests.framework */; };
 		B5833C942A0C4D3400C6A4FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833C932A0C4D3400C6A4FC /* AppDelegate.swift */; };
 		B5833C962A0C4D3400C6A4FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833C952A0C4D3400C6A4FC /* SceneDelegate.swift */; };
 		B5833C982A0C4D3400C6A4FC /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833C972A0C4D3400C6A4FC /* WeatherViewController.swift */; };
@@ -20,15 +21,15 @@
 		B5833CCB2A0C509A00C6A4FC /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CCA2A0C509A00C6A4FC /* WeatherView.swift */; };
 		B5833CCE2A0C51C100C6A4FC /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CCD2A0C51C100C6A4FC /* WeatherService.swift */; };
 		B5833CD22A0C54B800C6A4FC /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CD12A0C54B800C6A4FC /* WeatherViewModel.swift */; };
-		B5833CD52A0C596700C6A4FC /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B5833CD42A0C596700C6A4FC /* SDWebImageSwiftUI */; };
 		B5833CD82A0C769900C6A4FC /* WeatherServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CD72A0C769900C6A4FC /* WeatherServiceTests.swift */; };
 		B5833CD92A0C76EE00C6A4FC /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CCD2A0C51C100C6A4FC /* WeatherService.swift */; };
 		B5833CDA2A0C774000C6A4FC /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CD12A0C54B800C6A4FC /* WeatherViewModel.swift */; };
-		B59458B82A0C77DC0034E370 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B59458B72A0C77DC0034E370 /* SDWebImageSwiftUI */; };
 		B59458B92A0C78000034E370 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CC62A0C4F3F00C6A4FC /* WeatherInfo.swift */; };
 		B59458BB2A0C796A0034E370 /* WeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59458BA2A0C796A0034E370 /* WeatherViewModelTests.swift */; };
 		B59458BC2A0C84E80034E370 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833C972A0C4D3400C6A4FC /* WeatherViewController.swift */; };
 		B59458BD2A0C84F40034E370 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5833CCA2A0C509A00C6A4FC /* WeatherView.swift */; };
+		BD77925AE0EEAFF99F4FF5EA /* Pods_JPMCTakeHome_JPMCTakeHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE468D1F4CA4069BA24DBA9 /* Pods_JPMCTakeHome_JPMCTakeHomeUITests.framework */; };
+		C89C77DEBB79E38B42251E80 /* Pods_JPMCTakeHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D212E748BE130430C4D9A4A8 /* Pods_JPMCTakeHome.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		002973FB329FFB73B20B7D59 /* Pods-JPMCTakeHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPMCTakeHome.debug.xcconfig"; path = "Target Support Files/Pods-JPMCTakeHome/Pods-JPMCTakeHome.debug.xcconfig"; sourceTree = "<group>"; };
+		078367047A7B488A8940F9B0 /* Pods-JPMCTakeHome-JPMCTakeHomeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPMCTakeHome-JPMCTakeHomeUITests.debug.xcconfig"; path = "Target Support Files/Pods-JPMCTakeHome-JPMCTakeHomeUITests/Pods-JPMCTakeHome-JPMCTakeHomeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2E79029E6C5BBA38845FCE96 /* Pods-JPMCTakeHomeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPMCTakeHomeTests.debug.xcconfig"; path = "Target Support Files/Pods-JPMCTakeHomeTests/Pods-JPMCTakeHomeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		38F26E525049C5B795D32E51 /* Pods-JPMCTakeHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPMCTakeHome.release.xcconfig"; path = "Target Support Files/Pods-JPMCTakeHome/Pods-JPMCTakeHome.release.xcconfig"; sourceTree = "<group>"; };
+		67A81BAA8BDBBF9D9D18DBB9 /* Pods-JPMCTakeHomeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPMCTakeHomeTests.release.xcconfig"; path = "Target Support Files/Pods-JPMCTakeHomeTests/Pods-JPMCTakeHomeTests.release.xcconfig"; sourceTree = "<group>"; };
 		B5833C902A0C4D3400C6A4FC /* JPMCTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPMCTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5833C932A0C4D3400C6A4FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5833C952A0C4D3400C6A4FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +74,10 @@
 		B5833CD12A0C54B800C6A4FC /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		B5833CD72A0C769900C6A4FC /* WeatherServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTests.swift; sourceTree = "<group>"; };
 		B59458BA2A0C796A0034E370 /* WeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTests.swift; sourceTree = "<group>"; };
+		D212E748BE130430C4D9A4A8 /* Pods_JPMCTakeHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JPMCTakeHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C77CBA5C487BE230821903 /* Pods-JPMCTakeHome-JPMCTakeHomeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPMCTakeHome-JPMCTakeHomeUITests.release.xcconfig"; path = "Target Support Files/Pods-JPMCTakeHome-JPMCTakeHomeUITests/Pods-JPMCTakeHome-JPMCTakeHomeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D9AB1DA9E5EC5F0847483B71 /* Pods_JPMCTakeHomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JPMCTakeHomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBE468D1F4CA4069BA24DBA9 /* Pods_JPMCTakeHome_JPMCTakeHomeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JPMCTakeHome_JPMCTakeHomeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5833CD52A0C596700C6A4FC /* SDWebImageSwiftUI in Frameworks */,
+				C89C77DEBB79E38B42251E80 /* Pods_JPMCTakeHome.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B59458B82A0C77DC0034E370 /* SDWebImageSwiftUI in Frameworks */,
+				6724CDF0AEB06079801A0000 /* Pods_JPMCTakeHomeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,12 +101,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD77925AE0EEAFF99F4FF5EA /* Pods_JPMCTakeHome_JPMCTakeHomeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95B6D95356EF177D96351DB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				002973FB329FFB73B20B7D59 /* Pods-JPMCTakeHome.debug.xcconfig */,
+				38F26E525049C5B795D32E51 /* Pods-JPMCTakeHome.release.xcconfig */,
+				078367047A7B488A8940F9B0 /* Pods-JPMCTakeHome-JPMCTakeHomeUITests.debug.xcconfig */,
+				D5C77CBA5C487BE230821903 /* Pods-JPMCTakeHome-JPMCTakeHomeUITests.release.xcconfig */,
+				2E79029E6C5BBA38845FCE96 /* Pods-JPMCTakeHomeTests.debug.xcconfig */,
+				67A81BAA8BDBBF9D9D18DBB9 /* Pods-JPMCTakeHomeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B5833C872A0C4D3400C6A4FC = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +129,7 @@
 				B5833CB32A0C4D3500C6A4FC /* JPMCTakeHomeUITests */,
 				B5833C912A0C4D3400C6A4FC /* Products */,
 				B59458B62A0C77DC0034E370 /* Frameworks */,
+				95B6D95356EF177D96351DB2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,6 +223,9 @@
 		B59458B62A0C77DC0034E370 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D212E748BE130430C4D9A4A8 /* Pods_JPMCTakeHome.framework */,
+				EBE468D1F4CA4069BA24DBA9 /* Pods_JPMCTakeHome_JPMCTakeHomeUITests.framework */,
+				D9AB1DA9E5EC5F0847483B71 /* Pods_JPMCTakeHomeTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,9 +237,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5833CBA2A0C4D3500C6A4FC /* Build configuration list for PBXNativeTarget "JPMCTakeHome" */;
 			buildPhases = (
+				7DEA43F1AD69E88EE3BCEE96 /* [CP] Check Pods Manifest.lock */,
 				B5833C8C2A0C4D3400C6A4FC /* Sources */,
 				B5833C8D2A0C4D3400C6A4FC /* Frameworks */,
 				B5833C8E2A0C4D3400C6A4FC /* Resources */,
+				ED14C1C11E1FBC1CAB00A38C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -219,7 +249,6 @@
 			);
 			name = JPMCTakeHome;
 			packageProductDependencies = (
-				B5833CD42A0C596700C6A4FC /* SDWebImageSwiftUI */,
 			);
 			productName = JPMCTakeHome;
 			productReference = B5833C902A0C4D3400C6A4FC /* JPMCTakeHome.app */;
@@ -229,6 +258,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5833CBD2A0C4D3500C6A4FC /* Build configuration list for PBXNativeTarget "JPMCTakeHomeTests" */;
 			buildPhases = (
+				61DF221D747DEA82947E295E /* [CP] Check Pods Manifest.lock */,
 				B5833CA22A0C4D3500C6A4FC /* Sources */,
 				B5833CA32A0C4D3500C6A4FC /* Frameworks */,
 				B5833CA42A0C4D3500C6A4FC /* Resources */,
@@ -240,7 +270,6 @@
 			);
 			name = JPMCTakeHomeTests;
 			packageProductDependencies = (
-				B59458B72A0C77DC0034E370 /* SDWebImageSwiftUI */,
 			);
 			productName = JPMCTakeHomeTests;
 			productReference = B5833CA62A0C4D3500C6A4FC /* JPMCTakeHomeTests.xctest */;
@@ -250,9 +279,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5833CC02A0C4D3500C6A4FC /* Build configuration list for PBXNativeTarget "JPMCTakeHomeUITests" */;
 			buildPhases = (
+				ED47DD7488FE350098180D04 /* [CP] Check Pods Manifest.lock */,
 				B5833CAC2A0C4D3500C6A4FC /* Sources */,
 				B5833CAD2A0C4D3500C6A4FC /* Frameworks */,
 				B5833CAE2A0C4D3500C6A4FC /* Resources */,
+				638C959CC58CDF71E61C22B8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -297,7 +328,6 @@
 			);
 			mainGroup = B5833C872A0C4D3400C6A4FC;
 			packageReferences = (
-				B5833CD32A0C596700C6A4FC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = B5833C912A0C4D3400C6A4FC /* Products */;
 			projectDirPath = "";
@@ -336,6 +366,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		61DF221D747DEA82947E295E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JPMCTakeHomeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		638C959CC58CDF71E61C22B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JPMCTakeHome-JPMCTakeHomeUITests/Pods-JPMCTakeHome-JPMCTakeHomeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JPMCTakeHome-JPMCTakeHomeUITests/Pods-JPMCTakeHome-JPMCTakeHomeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JPMCTakeHome-JPMCTakeHomeUITests/Pods-JPMCTakeHome-JPMCTakeHomeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DEA43F1AD69E88EE3BCEE96 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JPMCTakeHome-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED14C1C11E1FBC1CAB00A38C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JPMCTakeHome/Pods-JPMCTakeHome-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JPMCTakeHome/Pods-JPMCTakeHome-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JPMCTakeHome/Pods-JPMCTakeHome-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED47DD7488FE350098180D04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JPMCTakeHome-JPMCTakeHomeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B5833C8C2A0C4D3400C6A4FC /* Sources */ = {
@@ -527,6 +660,7 @@
 		};
 		B5833CBB2A0C4D3500C6A4FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 002973FB329FFB73B20B7D59 /* Pods-JPMCTakeHome.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -554,6 +688,7 @@
 		};
 		B5833CBC2A0C4D3500C6A4FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38F26E525049C5B795D32E51 /* Pods-JPMCTakeHome.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -581,6 +716,7 @@
 		};
 		B5833CBE2A0C4D3500C6A4FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E79029E6C5BBA38845FCE96 /* Pods-JPMCTakeHomeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -600,6 +736,7 @@
 		};
 		B5833CBF2A0C4D3500C6A4FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67A81BAA8BDBBF9D9D18DBB9 /* Pods-JPMCTakeHomeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -619,6 +756,7 @@
 		};
 		B5833CC12A0C4D3500C6A4FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 078367047A7B488A8940F9B0 /* Pods-JPMCTakeHome-JPMCTakeHomeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -636,6 +774,7 @@
 		};
 		B5833CC22A0C4D3500C6A4FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5C77CBA5C487BE230821903 /* Pods-JPMCTakeHome-JPMCTakeHomeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -691,30 +830,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B5833CD32A0C596700C6A4FC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B5833CD42A0C596700C6A4FC /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B5833CD32A0C596700C6A4FC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
-		};
-		B59458B72A0C77DC0034E370 /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B5833CD32A0C596700C6A4FC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B5833C882A0C4D3400C6A4FC /* Project object */;
 }

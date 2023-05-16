@@ -1,0 +1,6 @@
+framework module Pods_JPMCTakeHome_JPMCTakeHomeUITests {
+  umbrella header "Pods-JPMCTakeHome-JPMCTakeHomeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
