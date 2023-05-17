@@ -108,12 +108,12 @@ class WeatherService: WeatherProtocol {
     
     private func createURL(for city: String) -> URL? {
         let encodedCity = city.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        let urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(encodedCity)&appid=\(apiKey)"
+        let urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(encodedCity)&units=metric&appid=\(apiKey)"
         return URL(string: urlString)
     }
     
     private func createURL(for latitude: String, _ longitude: String) -> URL? {
-        let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)"
+        let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&units=metric&appid=\(apiKey)"
         return URL(string: urlString)
     }
     
